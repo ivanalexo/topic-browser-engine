@@ -1,15 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ApolloProvider } from '@apollo/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { client } from './api/Client';
+import TopicContainer from './components/TopicContainer';
+import RelatedTopics from './components/RelatedTopics';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<TopicContainer />} />
+          <Route path='/:id' element={<RelatedTopics />} />
+        </Routes>
+      </BrowserRouter>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
