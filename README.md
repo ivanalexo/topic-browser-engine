@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 Make sure to create your env file with this variables:
 ```
 REACT_APP_API=https://api.github.com/graphql
-REACT_APP_GITHUB_TOKEN=<your-githbub-token>
+REACT_APP_GITHUB_TOKEN=<your-github-token>
 ```
 
 ### `yarn test`
